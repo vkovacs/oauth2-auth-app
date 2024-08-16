@@ -27,7 +27,6 @@ public class SecurityConfig {
         return http.build();
     }
 
-    //https://docs.spring.io/spring-security/reference/servlet/test/mockmvc/oauth2.html
     @Bean
     @SneakyThrows
     public JwtDecoder jwtDecoder() {

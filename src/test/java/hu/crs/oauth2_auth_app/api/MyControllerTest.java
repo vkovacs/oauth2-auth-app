@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.oauth2Login;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -39,6 +38,7 @@ class MyControllerTest {
                 .andExpect(status().isUnauthorized());
     }
 
+    //https://docs.spring.io/spring-security/reference/servlet/test/mockmvc/oauth2.html
     @Test
     @SneakyThrows
     void loggedInUserAccessProtected() {
