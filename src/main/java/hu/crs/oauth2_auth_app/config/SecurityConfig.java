@@ -42,12 +42,12 @@ public class SecurityConfig {
     public static RSAPublicKey getPublicKeyFromString(String key) throws Exception {
         // Remove the first and last lines if the key includes the "-----BEGIN PUBLIC KEY-----"
         // and "-----END PUBLIC KEY-----" parts.
-        String publicKeyPEM = key.replace("-----BEGIN PUBLIC KEY-----", "")
+        String strippedPublicKeyPEM = key.replace("-----BEGIN PUBLIC KEY-----", "")
                 .replace("-----END PUBLIC KEY-----", "")
                 .replaceAll("\\s+", ""); // Remove any extra whitespace/newlines
 
         // Decode the Base64 encoded string to get the key bytes
-        byte[] encoded = Base64.getDecoder().decode(publicKeyPEM);
+        byte[] encoded = Base64.getDecoder().decode(strippedPublicKeyPEM);
 
         // Create a key specification from the key bytes
         X509EncodedKeySpec keySpec = new X509EncodedKeySpec(encoded);

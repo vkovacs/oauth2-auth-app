@@ -12,7 +12,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@SpringBootTest
+@SpringBootTest(properties = "ouath.decoder.publickey.pem=-----BEGIN PUBLIC KEY-----MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDOt7AU3d56tmXAIDrnip9g5tPsjDeZo++HIGJ1vls6VvY/m5dSQy1obrVHqY1Kaa+/jB2ssJquEva5CR26J0qsJGgawZr/fku1+Tcbn+VRemDX0HKYmauNGnUv37Mxt4p1pmxqqgCFRTtw2JbJXqZPlEiSoZLPhqhOELOk3dZzHQIDAQAB-----END PUBLIC KEY-----")
 @AutoConfigureMockMvc
 class MyControllerTest {
     @Autowired
